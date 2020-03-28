@@ -1,0 +1,1 @@
+cargo check -> like compiling but does not produce executable
