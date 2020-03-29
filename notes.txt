@@ -1,1 +1,10 @@
-cargo check -> like compiling but does not produce executable
+cargo check
+
+    like compiling but does not produce executable
+
+type declaration for array
+
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+                 ^ number of elements
+            ^^^
+            type of each element
