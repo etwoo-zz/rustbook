@@ -11,23 +11,23 @@ type declaration for array
 
 statements (do not return value) vs expressions (evaluate to resulting value)
 
-	fn main() {
-		let x = 5;
+    fn main() {
+        let x = 5;
 
-		let y = {
-			let x = 3;
-			x + 1
-		};
+        let y = {
+            let x = 3;
+            x + 1
+        };
 
-		println!("The value of y is: {}", y);
-	}
+        println!("The value of y is: {}", y);
+    }
 
-	This expression:
+    This expression:
 
-	{
-		let x = 3;
-		x + 1
-	}
+    {
+        let x = 3;
+        x + 1
+    }
 
     is a block that, in this case, evaluates to 4. That value gets bound
     to y as part of the let statement. Note the x + 1 line without a
@@ -59,16 +59,16 @@ control flow: more expression usage
     expression you use to stop the loop; that value will be returned
     out of the loop so you can use it, as shown here:
 
-	fn main() {
-		let mut counter = 0;
+    fn main() {
+        let mut counter = 0;
 
-		let result = loop {
-			counter += 1;
+        let result = loop {
+            counter += 1;
 
-			if counter == 10 {
-				break counter * 2;
-			}
-		};
+            if counter == 10 {
+                break counter * 2;
+            }
+        };
 
-		println!("The result is {}", result);
-	}
+        println!("The result is {}", result);
+    }
