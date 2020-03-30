@@ -127,3 +127,33 @@ enum, like a sum type
     type, we couldn't as easily define a function to take any of these
     kinds of messages as we could with the Message enum [...], which is
     a single type.
+
+if let; wtf? do people really use this language feature a lot?
+
+    let some_u8_value = Some(0u8);
+    match some_u8_value {
+        Some(3) => println!("three"),
+        _ => (),
+    }
+
+    We want to do something with the `Some(3)` match but do nothing with
+    any other `Some<u8>` value or the `None` value. To satisfy the
+    `match` expression, we have to add `_ => ()` after processing just
+    one variant, which is a lot of boilerplate code to add.
+
+    Instead, we could write this in a shorter way using `if let` [...]
+
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }
+
+found clarification for `if let` on github issue for this book chapter
+
+    https://github.com/rust-lang/book/issues/1401#issuecomment-450628967
+
+    You'd better think about `if let` as a one-handed `match` with no
+    exhaustive checking enforced. In the case of the given example, it
+    has nothing to do with `if` or `let`, that's why it is so confusing
+
+    Maybe it would be better to rename the whole operator, call it
+    `match once` or something like that.
